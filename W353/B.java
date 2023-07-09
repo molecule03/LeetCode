@@ -5,23 +5,29 @@ import java.util.*;
 public class B {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        int t = sc.nextInt();
-
-        while(t-->0) {
-
-            int n = sc.nextInt();
-            int nums[] = new int[n];
-
-            for(int i=0; i<n; i++) nums[i] = sc.nextInt();
-            System.out.println(fun(nums, n));
-        }
+        int nums[] ={1,3,6,3,1,2};
+        int target = 2;
+        System.out.println(maximumJumps(nums, target));
     }
 
-    public static int fun(int[] nums, int threshold) {
+    //    Corrected Code in Upsolve
+    public static int maximumJumps(int[] nums, int target) {
 
+        int n = nums.length;
 
-        return 0;
+        int dp[] = new int[n+1];
+        Arrays.fill(dp, -1);
+        dp[0] = 0;
+
+        for(int i=1; i<n; i++){
+            for(int j=0; j<i; j++){
+                if(Math.abs(nums[j]-nums[i]) <= target && dp[j] != -1){
+                    dp[i] = Math.max(dp[i], dp[j]+1);
+                }
+            }
+        }
+
+        return dp[n-1];
     }
 }
