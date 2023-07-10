@@ -13,31 +13,39 @@ public class B {
 
     }
 
+    /**
+     * LUPrefix class represents a data structure that maintains a list of uploaded videos
+     * and provides methods to upload videos and find the length of the longest uploaded prefix.
+     */
     static class LUPrefix {
         boolean list[];
         int max = 1;
+
+        /**
+         * Constructor for LUPrefix class.
+         * @param n An integer representing the initial size of the list.
+         */
         public LUPrefix(int n) {
             list = new boolean[n+2];
             list[0] = true;
             max = 1;
-
         }
 
+        /**
+         * Uploads a video to the list.
+         * @param video An integer representing the video to be uploaded.
+         */
         public void upload(int video) {
-            // list.add(video, true);
             list[video] = true;
             while(list[max] == true) max++;
         }
 
+        /**
+         * Returns the length of the longest uploaded prefix.
+         * @return An integer representing the length of the longest uploaded prefix.
+         */
         public int longest() {
             return max-1;
         }
     }
-
-/**
- * Your LUPrefix object will be instantiated and called as such:
- * LUPrefix obj = new LUPrefix(n);
- * obj.upload(video);
- * int param_2 = obj.longest();
- */
 }
