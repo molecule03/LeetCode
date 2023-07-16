@@ -14,7 +14,7 @@ public class A {
     //    Corrected Code in Upsolve
     public static int sumOfSquares(int[] nums) {
 
-        int mod = 1000000007;
+        int mod = (int) (1e9+7);
         int n = nums.length;
 
         long sum = 0;
