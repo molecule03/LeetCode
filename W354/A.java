@@ -16,7 +16,6 @@ public class A {
 
         int mod = (int) (1e9+7);
         int n = nums.length;
-
         long sum = 0;
 
         for(int i=0; i<n; i++){
