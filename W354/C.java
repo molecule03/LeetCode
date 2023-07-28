@@ -10,7 +10,6 @@ public class C {
         int target = 2;
 //        System.out.println(maximumJumps(nums, target));
     }
-
     //    Corrected Code in Upsolve
 //    public static int maximumJumps(int[] nums, int target) {
 //
